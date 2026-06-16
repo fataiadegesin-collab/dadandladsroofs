@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dad & Lads Roofs & Industries Ltd — Nationwide Roofing, Nigeria</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --lime:    #7CBF00;
+    --lime-dk: #5A8C00;
+    --lime-lt: #D4F080;
+    --lime-bg: #F2FBDF;
+    --dark:    #1A2200;
+    --charcoal:#2E3A1A;
+    --mid:     #4A5E2A;
+    --white:   #FAFFF2;
+    --ink:     #141F00;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 5vw;
+    background: rgba(250,255,242,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--lime);
+  }
+  .nav-logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 900; font-size: 1.1rem;
+    color: var(--dark); line-height: 1.15; letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--lime-dk); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--charcoal);
+    font-size: 0.875rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--lime-dk); }
+  .nav-cta {
+    background: var(--lime); color: var(--dark);
+    border: none; padding: 10px 22px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 700;
+    cursor: pointer; border-radius: 3px;
+    transition: background 0.2s;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--lime-dk); color: white; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 70px; overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6vw 4vw 6vw 6vw; position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+    color: var(--lime-dk); text-transform: uppercase; margin-bottom: 1.4rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: inline-block;
+    width: 28px; height: 3px; background: var(--lime);
+  }
+  .hero-headline {
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+    line-height: 1.05; letter-spacing: -0.03em;
+    color: var(--dark); margin-bottom: 1.6rem;
+  }
+  .hero-headline em { font-style: italic; color: var(--lime-dk); }
+  .hero-sub {
+    font-size: 1rem; color: var(--mid);
+    max-width: 420px; margin-bottom: 2.4rem; line-height: 1.75;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .btn-primary {
+    background: var(--lime); color: var(--dark);
+    border: none; padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; border-radius: 3px;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--lime-dk); color: white; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--charcoal);
+    border: 2px solid var(--lime); padding: 12px 24px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
+    cursor: pointer; border-radius: 3px;
+    transition: all 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-outline:hover { background: var(--lime); color: var(--dark); }
+  .hero-phones {
+    display: flex; gap: 18px; flex-wrap: wrap;
+  }
+  .hero-phone a {
+    font-size: 0.9rem; font-weight: 600; color: var(--charcoal);
+    text-decoration: none; display: flex; align-items: center; gap: 6px;
+  }
+  .hero-phone a:hover { color: var(--lime-dk); }
+  .hero-phone a::before { content: '📞'; font-size: 0.85rem; }
+
+  .hero-right {
+    background: var(--dark);
+    position: relative; display: flex; align-items: flex-end; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-illustration {
+    width: 100%; height: 100%;
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    padding: 60px 40px 0;
+  }
+  .truss-svg { width: 100%; max-width: 520px; }
+  .hero-badge {
+    position: absolute; bottom: 36px; left: 36px;
+    background: var(--lime); color: var(--dark);
+    padding: 14px 20px; border-radius: 3px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; line-height: 1.4;
+  }
+  .hero-badge strong {
+    font-size: 1.5rem; font-family: 'Fraunces', serif; display: block; letter-spacing: -0.03em;
+  }
+
+  /* ── USP STRIP ── */
+  .usp-strip {
+    background: var(--charcoal);
+    padding: 0 5vw;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .usp-item {
+    padding: 30px 20px;
+    border-right: 1px solid rgba(124,191,0,0.2);
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .usp-item:last-child { border-right: none; }
+  .usp-icon { font-size: 1.4rem; margin-bottom: 4px; }
+  .usp-label {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--lime-lt); letter-spacing: -0.01em;
+  }
+  .usp-desc { font-size: 0.78rem; color: rgba(212,240,128,0.5); line-height: 1.5; }
+
+  /* ── SECTIONS ── */
+  section { padding: 88px 5vw; }
+  .section-eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+    color: var(--lime-dk); text-transform: uppercase; margin-bottom: 1rem;
+  }
+  .section-heading {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 900; letter-spacing: -0.025em;
+    color: var(--dark); line-height: 1.1; margin-bottom: 1.2rem;
+  }
+  .section-body { font-size: 1rem; color: var(--mid); max-width: 520px; line-height: 1.75; }
+
+  /* ── SERVICES ── */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px; margin-top: 3rem;
+    border: 2px solid var(--dark);
+  }
+  .service-card {
+    padding: 40px 34px; background: var(--white);
+    border: 1px solid rgba(26,34,0,0.07);
+    transition: background 0.2s; position: relative;
+  }
+  .service-card:hover { background: var(--lime-bg); }
+  .service-num {
+    font-family: 'Fraunces', serif; font-size: 3.5rem; font-weight: 900;
+    color: rgba(124,191,0,0.15); line-height: 1; margin-bottom: 14px;
+    letter-spacing: -0.04em;
+  }
+  .service-title {
+    font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 700;
+    color: var(--charcoal); margin-bottom: 10px; letter-spacing: -0.01em;
+  }
+  .service-desc { font-size: 0.88rem; color: var(--mid); line-height: 1.7; }
+
+  /* ── VISUAL SHOWCASE (Truss + Stone-Coated Sheets) ── */
+  .showcase-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; margin-top: 3rem;
+  }
+  .showcase-card {
+    background: var(--dark); border-radius: 4px;
+    overflow: hidden; position: relative;
+    border: 1px solid rgba(124,191,0,0.15);
+  }
+  .showcase-visual {
+    width: 100%; aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .showcase-label {
+    padding: 22px 24px 26px;
+    border-top: 1px solid rgba(124,191,0,0.15);
+  }
+  .showcase-eyebrow {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--lime); margin-bottom: 6px;
+  }
+  .showcase-title {
+    font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700;
+    color: var(--lime-lt); margin-bottom: 6px;
+  }
+  .showcase-desc { font-size: 0.82rem; color: rgba(212,240,128,0.45); line-height: 1.55; }
+  .showcase-photo-note {
+    position: absolute; top: 12px; right: 12px;
+    background: rgba(124,191,0,0.15); border: 1px dashed rgba(124,191,0,0.4);
+    color: var(--lime-lt); font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 5px 9px; border-radius: 3px;
+  }
+  @media (max-width: 768px) { .showcase-grid { grid-template-columns: 1fr; } }
+
+  /* ── WHY US ── */
+  .why-section { background: var(--lime-bg); }
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5vw; align-items: center;
+  }
+  .why-features { display: flex; flex-direction: column; gap: 26px; margin-top: 2rem; }
+  .why-feat { display: flex; gap: 16px; align-items: flex-start; }
+  .feat-icon {
+    width: 44px; height: 44px; background: var(--lime);
+    border-radius: 2px; display: flex; align-items: center;
+    justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+  }
+  .feat-text h4 {
+    font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700;
+    color: var(--dark); margin-bottom: 4px;
+  }
+  .feat-text p { font-size: 0.875rem; color: var(--mid); line-height: 1.6; }
+  .why-visual {
+    background: var(--dark); border-radius: 4px; padding: 48px 38px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .stat-row {
+    display: flex; align-items: baseline; gap: 12px;
+    border-bottom: 1px solid rgba(124,191,0,0.15); padding-bottom: 20px;
+  }
+  .stat-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .stat-num {
+    font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 900;
+    color: var(--lime); line-height: 1; letter-spacing: -0.04em;
+  }
+  .stat-label { font-size: 0.85rem; color: rgba(212,240,128,0.55); line-height: 1.4; }
+
+  /* ── COVERAGE ── */
+  .coverage-section { background: var(--ink); }
+  .coverage-section .section-heading { color: var(--lime-lt); }
+  .coverage-section .section-body { color: rgba(212,240,128,0.5); }
+  .states-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px; background: rgba(124,191,0,0.1);
+    margin-top: 3rem; border: 1px solid rgba(124,191,0,0.1);
+  }
+  .state-card {
+    background: var(--ink); padding: 36px 28px; transition: background 0.2s;
+  }
+  .state-card:hover { background: #1F2E00; }
+  .state-name {
+    font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700;
+    color: var(--lime-lt); margin-bottom: 6px;
+  }
+  .state-status {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--lime);
+  }
+  .state-status.coming { color: rgba(212,240,128,0.25); }
+  .state-desc { font-size: 0.82rem; color: rgba(212,240,128,0.38); margin-top: 8px; line-height: 1.5; }
+
+  /* ── PROCESS ── */
+  .steps-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-top: 3rem;
+  }
+  .step {
+    padding: 36px 28px;
+    border-left: 3px solid rgba(124,191,0,0.2);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .step:hover { border-left-color: var(--lime); background: var(--lime-bg); }
+  .step-num {
+    font-family: 'Fraunces', serif; font-size: 0.75rem; font-weight: 700;
+    color: var(--lime-dk); letter-spacing: 0.12em; margin-bottom: 14px;
+  }
+  .step-title {
+    font-family: 'Fraunces', serif; font-size: 1.12rem; font-weight: 700;
+    color: var(--dark); margin-bottom: 8px;
+  }
+  .step-desc { font-size: 0.875rem; color: var(--mid); line-height: 1.6; }
+
+  /* ── CONTACT / CTA ── */
+  .cta-banner {
+    background: var(--lime);
+    padding: 80px 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 2rem;
+  }
+  .cta-banner h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 900;
+    color: var(--dark); letter-spacing: -0.03em; line-height: 1.1; max-width: 500px;
+  }
+  .cta-banner h2 em { font-style: italic; color: var(--charcoal); }
+  .cta-right { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  .cta-phones { display: flex; flex-direction: column; gap: 8px; }
+  .cta-phone {
+    font-size: 1.1rem; font-weight: 700; color: var(--dark);
+    text-decoration: none; display: flex; align-items: center; gap: 8px;
+    transition: color 0.2s;
+  }
+  .cta-phone:hover { color: var(--charcoal); }
+  .btn-dark {
+    background: var(--dark); color: var(--lime);
+    border: none; padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; border-radius: 3px;
+    transition: background 0.2s; text-decoration: none; display: inline-block;
+  }
+  .btn-dark:hover { background: var(--charcoal); }
+  .btn-outline-dark {
+    background: transparent; color: var(--dark);
+    border: 2px solid var(--dark); padding: 12px 26px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 700;
+    cursor: pointer; border-radius: 3px;
+    transition: all 0.2s; text-decoration: none; display: inline-block;
+  }
+  .btn-outline-dark:hover { background: var(--dark); color: var(--lime); }
+  .cta-note { font-size: 0.8rem; color: rgba(26,34,0,0.6); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--dark); padding: 50px 5vw 30px; }
+  .footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem; padding-bottom: 36px;
+    border-bottom: 1px solid rgba(124,191,0,0.12); margin-bottom: 24px;
+  }
+  .footer-brand {
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.1rem;
+    color: var(--lime-lt); margin-bottom: 10px;
+  }
+  .footer-brand span { color: var(--lime); }
+  .footer-tagline { font-size: 0.82rem; color: rgba(212,240,128,0.38); line-height: 1.6; }
+  .footer-contact { margin-top: 14px; display: flex; flex-direction: column; gap: 5px; }
+  .footer-contact a {
+    font-size: 0.85rem; color: rgba(212,240,128,0.6);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-contact a:hover { color: var(--lime); }
+  .footer-col h5 {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--lime); margin-bottom: 14px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-col ul a {
+    font-size: 0.85rem; color: rgba(212,240,128,0.45);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: var(--lime-lt); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+  }
+  .footer-copy { font-size: 0.78rem; color: rgba(212,240,128,0.25); }
+  .footer-reg { font-size: 0.72rem; color: rgba(212,240,128,0.2); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { min-height: 280px; }
+    .usp-strip { grid-template-columns: 1fr 1fr; }
+    .usp-item { border-right: none; border-bottom: 1px solid rgba(124,191,0,0.15); }
+    .why-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    nav .nav-links { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Dad <span>&</span> Lads<br>Roofs & Industries Ltd</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#coverage">Coverage</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:+2349076522025" class="nav-cta">Call Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Registered in Nigeria · RC 8931054 · Nationwide</p>
+    <h1 class="hero-headline">
+      Roofs Built to<br><em>Last 50 Years.</em><br>You Pay as We Build.
+    </h1>
+    <p class="hero-sub">
+      Professional wooden roof trusses and roofing sheet installation, serving clients nationwide across Nigeria — with zero down payment and a warranty that outlasts the mortgage.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+    <div class="hero-phones">
+      <div class="hero-phone"><a href="tel:+2349076522025">09076522025</a></div>
+      <div class="hero-phone"><a href="tel:+2348132302906">08132302906</a></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-illustration">
+      <svg class="truss-svg" viewBox="0 0 520 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="520" height="300" fill="#1A2200"/>
+        <circle cx="420" cy="55" r="40" fill="#7CBF00" opacity="0.06"/>
+        <!-- Main truss -->
+        <line x1="260" y1="28" x2="30" y2="222" stroke="#7CBF00" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="260" y1="28" x2="490" y2="222" stroke="#7CBF00" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="30" y1="222" x2="490" y2="222" stroke="#7CBF00" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- Verticals -->
+        <line x1="260" y1="28" x2="260" y2="222" stroke="#D4F080" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="145" y1="125" x2="145" y2="222" stroke="#D4F080" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+        <line x1="375" y1="125" x2="375" y2="222" stroke="#D4F080" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+        <!-- Diagonals -->
+        <line x1="30" y1="222" x2="260" y2="125" stroke="#7CBF00" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+        <line x1="490" y1="222" x2="260" y2="125" stroke="#7CBF00" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+        <line x1="145" y1="222" x2="260" y2="125" stroke="#7CBF00" stroke-width="1.4" stroke-linecap="round" opacity="0.35"/>
+        <line x1="375" y1="222" x2="260" y2="125" stroke="#7CBF00" stroke-width="1.4" stroke-linecap="round" opacity="0.35"/>
+        <!-- Sheet lines -->
+        <line x1="260" y1="28" x2="30" y2="222" stroke="#D4F080" stroke-width="0.6" stroke-dasharray="6 4" opacity="0.3" transform="translate(18 0)"/>
+        <line x1="260" y1="28" x2="30" y2="222" stroke="#D4F080" stroke-width="0.6" stroke-dasharray="6 4" opacity="0.3" transform="translate(-18 0)"/>
+        <line x1="260" y1="28" x2="490" y2="222" stroke="#D4F080" stroke-width="0.6" stroke-dasharray="6 4" opacity="0.3" transform="translate(-18 0)"/>
+        <line x1="260" y1="28" x2="490" y2="222" stroke="#D4F080" stroke-width="0.6" stroke-dasharray="6 4" opacity="0.3" transform="translate(18 0)"/>
+        <!-- Ground -->
+        <rect x="30" y="222" width="460" height="7" rx="1" fill="#7CBF00" opacity="0.12"/>
+        <!-- Nodes -->
+        <circle cx="260" cy="28" r="7" fill="#7CBF00"/>
+        <circle cx="30" cy="222" r="5" fill="#D4F080" opacity="0.5"/>
+        <circle cx="490" cy="222" r="5" fill="#D4F080" opacity="0.5"/>
+        <circle cx="260" cy="125" r="4" fill="#7CBF00" opacity="0.7"/>
+        <!-- Label -->
+        <text x="260" y="268" text-anchor="middle" fill="#7CBF00" opacity="0.25" font-family="sans-serif" font-size="10" letter-spacing="2.5">KING POST TRUSS · DAD &amp; LADS</text>
+      </svg>
+    </div>
+    <div class="hero-badge">
+      <strong>50 YRS</strong>
+      Structural Warranty
+    </div>
+  </div>
+</section>
+
+<!-- USP STRIP -->
+<div class="usp-strip">
+  <div class="usp-item">
+    <div class="usp-icon">🚫</div>
+    <div class="usp-label">No Down Payment</div>
+    <div class="usp-desc">We start before you spend a kobo</div>
+  </div>
+  <div class="usp-item">
+    <div class="usp-icon">📊</div>
+    <div class="usp-label">Pay on Progress</div>
+    <div class="usp-desc">Payments tied to verified milestones</div>
+  </div>
+  <div class="usp-item">
+    <div class="usp-icon">🏆</div>
+    <div class="usp-label">50-Year Warranty</div>
+    <div class="usp-desc">Full structural guarantee — in writing</div>
+  </div>
+  <div class="usp-item">
+    <div class="usp-icon">🔧</div>
+    <div class="usp-label">1-Year Free Maintenance</div>
+    <div class="usp-desc">We return and keep it perfect</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-eyebrow">What We Do</p>
+  <h2 class="section-heading">Two Specialisations.<br>One Standard of Excellence.</h2>
+  <p class="section-body">We focus on what we do best — so every roof we touch meets the same uncompromising bar.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-title">Wooden Roof Framework & Trusses</div>
+      <p class="service-desc">We design and install precision-engineered wooden roof trusses — king post, queen post, fink, and hipped configurations — sized and spaced for your exact span and load. Every timber treated, graded, and fitted by trained craftsmen.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-title">Roofing Sheet Installation</div>
+      <p class="service-desc">From long-span aluminium and stone-coated steel to corrugated iron, we supply and install roofing sheets with watertight precision. Proper lapping, sealed ridges, and correct pitch — every time, on every project size.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-title">Full Roofing Contracts</div>
+      <p class="service-desc">End-to-end roofing contracts for residential, commercial, estate, and industrial structures across Lagos, Ogun, and Oyo. Single point of accountability from measurement to handover.</p>
+    </div>
+  </div>
+
+  <div class="showcase-grid">
+    <!-- Wooden Hip Truss Illustration -->
+    <div class="showcase-card">
+      <div class="showcase-visual">
+        <span class="showcase-photo-note">Job-site photos coming soon</span>
+        <svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#1A2200"/>
+          <!-- Hip roof truss - common Nigerian residential form -->
+          <!-- Main ridge -->
+          <line x1="130" y1="60" x2="270" y2="60" stroke="#7CBF00" stroke-width="3" stroke-linecap="round"/>
+          <!-- Hip rafters from ridge ends down to corners -->
+          <line x1="130" y1="60" x2="40" y2="230" stroke="#D4F080" stroke-width="3" stroke-linecap="round"/>
+          <line x1="270" y1="60" x2="360" y2="230" stroke="#D4F080" stroke-width="3" stroke-linecap="round"/>
+          <line x1="130" y1="60" x2="220" y2="230" stroke="#D4F080" stroke-width="2.2" stroke-linecap="round" opacity="0.75"/>
+          <line x1="270" y1="60" x2="180" y2="230" stroke="#D4F080" stroke-width="2.2" stroke-linecap="round" opacity="0.75"/>
+          <!-- Bottom wall plate -->
+          <line x1="40" y1="230" x2="360" y2="230" stroke="#7CBF00" stroke-width="3" stroke-linecap="round"/>
+          <!-- Common rafters (repeated) -->
+          <g stroke="#7CBF00" stroke-width="1.3" opacity="0.5">
+            <line x1="160" y1="60" x2="80" y2="230"/>
+            <line x1="190" y1="60" x2="130" y2="230"/>
+            <line x1="240" y1="60" x2="270" y2="230"/>
+            <line x1="210" y1="60" x2="320" y2="230"/>
+          </g>
+          <!-- King posts / struts -->
+          <line x1="160" y1="60" x2="160" y2="230" stroke="#7CBF00" stroke-width="1.6" opacity="0.4"/>
+          <line x1="240" y1="60" x2="240" y2="230" stroke="#7CBF00" stroke-width="1.6" opacity="0.4"/>
+          <!-- Cross bracing -->
+          <line x1="40" y1="230" x2="160" y2="150" stroke="#D4F080" stroke-width="1" opacity="0.3"/>
+          <line x1="360" y1="230" x2="240" y2="150" stroke="#D4F080" stroke-width="1" opacity="0.3"/>
+          <!-- Nodes -->
+          <circle cx="130" cy="60" r="5" fill="#7CBF00"/>
+          <circle cx="270" cy="60" r="5" fill="#7CBF00"/>
+          <circle cx="40" cy="230" r="4" fill="#D4F080" opacity="0.6"/>
+          <circle cx="360" cy="230" r="4" fill="#D4F080" opacity="0.6"/>
+          <rect x="40" y="230" width="320" height="6" fill="#7CBF00" opacity="0.15"/>
+        </svg>
+      </div>
+      <div class="showcase-label">
+        <p class="showcase-eyebrow">Wooden Roof Framework</p>
+        <p class="showcase-title">Hip Truss — Nigerian Residential Standard</p>
+        <p class="showcase-desc">The hip configuration shown here is the most widely used wooden truss design for Nigerian homes — four sloped sides for better wind and rain resistance than gable designs.</p>
+      </div>
+    </div>
+
+    <!-- Stone-Coated Roofing Sheet Swatch -->
+    <div class="showcase-card">
+      <div class="showcase-visual">
+        <span class="showcase-photo-note">Job-site photos coming soon</span>
+        <svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#1A2200"/>
+          <!-- Stone-coated tile profile, viewed at an angle -->
+          <defs>
+            <pattern id="granule" width="6" height="6" patternUnits="userSpaceOnUse">
+              <circle cx="1.5" cy="1.5" r="0.7" fill="#D4F080" opacity="0.25"/>
+              <circle cx="4.5" cy="4" r="0.5" fill="#7CBF00" opacity="0.3"/>
+            </pattern>
+          </defs>
+          <!-- Tile rows mimicking corrugated stone-coated steel profile -->
+          <g>
+            <rect x="40" y="50" width="320" height="34" fill="#5A8C00" rx="3"/>
+            <rect x="40" y="50" width="320" height="34" fill="url(#granule)" rx="3"/>
+            <rect x="40" y="90" width="320" height="34" fill="#4A7A00" rx="3"/>
+            <rect x="40" y="90" width="320" height="34" fill="url(#granule)" rx="3"/>
+            <rect x="40" y="130" width="320" height="34" fill="#5A8C00" rx="3"/>
+            <rect x="40" y="130" width="320" height="34" fill="url(#granule)" rx="3"/>
+            <rect x="40" y="170" width="320" height="34" fill="#4A7A00" rx="3"/>
+            <rect x="40" y="170" width="320" height="34" fill="url(#granule)" rx="3"/>
+            <rect x="40" y="210" width="320" height="34" fill="#5A8C00" rx="3"/>
+            <rect x="40" y="210" width="320" height="34" fill="url(#granule)" rx="3"/>
+          </g>
+          <!-- Ridge cap highlight -->
+          <rect x="40" y="46" width="320" height="6" fill="#7CBF00" rx="2"/>
+          <!-- Shadow lines between rows for corrugation effect -->
+          <g stroke="#1A2200" stroke-width="2" opacity="0.5">
+            <line x1="40" y1="84" x2="360" y2="84"/>
+            <line x1="40" y1="124" x2="360" y2="124"/>
+            <line x1="40" y1="164" x2="360" y2="164"/>
+            <line x1="40" y1="204" x2="360" y2="204"/>
+          </g>
+        </svg>
+      </div>
+      <div class="showcase-label">
+        <p class="showcase-eyebrow">Roofing Sheet Installation</p>
+        <p class="showcase-title">Stone-Coated Steel — Premium Estate Finish</p>
+        <p class="showcase-desc">Granule-coated steel tiles are increasingly popular across Lagos and Ogun estates for their tile-like finish, rust resistance, and longer lifespan than plain zinc sheets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why-us" class="why-section">
+  <div class="why-grid">
+    <div>
+      <p class="section-eyebrow">Why Dad & Lads</p>
+      <h2 class="section-heading">Built on Trust.<br>Backed by Warranty.</h2>
+      <p class="section-body">We know the Nigerian roofing industry has trust problems. We're fixing that — one verified milestone and one honoured warranty at a time.</p>
+      <div class="why-features">
+        <div class="why-feat">
+          <div class="feat-icon">🤝</div>
+          <div class="feat-text">
+            <h4>No Down Payment Required</h4>
+            <p>We bear the upfront cost. You only pay as work is completed and verified — protecting your money at every stage.</p>
+          </div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">📋</div>
+          <div class="feat-text">
+            <h4>Progress-Linked Payments</h4>
+            <p>Payment schedules tied to physical milestones you can see and inspect. No surprises, no holdups.</p>
+          </div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">📜</div>
+          <div class="feat-text">
+            <h4>50-Year Written Warranty</h4>
+            <p>A documented structural warranty covering your roof for half a century — a legal commitment, not a verbal promise.</p>
+          </div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">🔧</div>
+          <div class="feat-text">
+            <h4>1-Year Free Maintenance</h4>
+            <p>We return at no cost within the first year for any adjustment, tightening, or minor repair your roof may need.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="stat-row">
+        <div class="stat-num">₦0</div>
+        <div class="stat-label">Required before<br>we start work</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">50</div>
+        <div class="stat-label">Years of structural<br>warranty coverage</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">12</div>
+        <div class="stat-label">Months of free<br>roof maintenance</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">36+1</div>
+        <div class="stat-label">States covered<br>nationwide, including FCT</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section id="coverage" class="coverage-section">
+  <p class="section-eyebrow" style="color:var(--lime)">Our Coverage</p>
+  <h2 class="section-heading">Nationwide Roofing.<br>One Call Away.</h2>
+  <p class="section-body">Wherever you're building in Nigeria, we can get you a preliminary quote remotely — then send a team for physical assessment.</p>
+  <div class="states-grid">
+    <div class="state-card">
+      <div class="state-name">Lagos · Ogun · Oyo</div>
+      <div class="state-status">● Resident Teams</div>
+      <p class="state-desc">Our home base — fastest site-visit turnaround and largest crew presence</p>
+    </div>
+    <div class="state-card">
+      <div class="state-name">South-South & South-East</div>
+      <div class="state-status">● Nationwide Service</div>
+      <p class="state-desc">Remote quotation, then a travel team dispatched for site visit and execution</p>
+    </div>
+    <div class="state-card">
+      <div class="state-name">North-Central, North-West & North-East</div>
+      <div class="state-status">● Nationwide Service</div>
+      <p class="state-desc">Remote quotation, then a travel team dispatched for site visit and execution</p>
+    </div>
+    <div class="state-card">
+      <div class="state-name">FCT Abuja</div>
+      <div class="state-status">● Nationwide Service</div>
+      <p class="state-desc">Remote quotation, then a travel team dispatched for site visit and execution</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <p class="section-eyebrow">How It Works</p>
+  <h2 class="section-heading">From First Message to<br>Final Handover.</h2>
+  <p class="section-body">A clear, honest process — wherever you are in Nigeria — so you always know what happens next and what it costs.</p>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">Send Us Your Details</div>
+      <p class="step-desc">Email or WhatsApp your location, roof plan, and site photos — we review and respond fast.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 02</div>
+      <div class="step-title">Preliminary Quotation</div>
+      <p class="step-desc">Based on what you send, we give you an estimated cost range so you know what to expect.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">Site Visit & Measurement</div>
+      <p class="step-desc">We schedule a physical visit for accurate measurement and structural assessment.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 04</div>
+      <div class="step-title">Final Quotation</div>
+      <p class="step-desc">A confirmed, written breakdown of materials, labour, timeline, and milestone payment schedule.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 05</div>
+      <div class="step-title">We Start — You Watch</div>
+      <p class="step-desc">Work begins with no down payment. You inspect each stage before any payment is triggered.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 06</div>
+      <div class="step-title">Handover & Warranty</div>
+      <p class="step-desc">Completed roof, 50-year warranty document, and your first free maintenance scheduled.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<div id="contact" class="cta-banner">
+  <h2>Ready for a Roof That<br><em>Lasts Generations?</em></h2>
+  <div class="cta-right">
+    <p style="font-size:0.78rem;font-weight:700;letter-spacing:0.1em;color:var(--charcoal);text-transform:uppercase;">Call or WhatsApp — It's Free</p>
+    <div class="cta-phones">
+      <a href="tel:+2349076522025" class="cta-phone">📞 09076522025</a>
+      <a href="tel:+2348132302906" class="cta-phone">📞 08132302906</a>
+    </div>
+    <a href="https://wa.me/2349076522025" class="btn-dark">Send Location & Photos on WhatsApp</a>
+    <a href="mailto:info@dadandladsroofs.com.ng" class="btn-outline-dark" style="margin-top:6px;">Send Us an Email</a>
+    <p class="cta-note">Nationwide Service — Lagos · Ogun · Oyo Resident Teams</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Dad <span>&</span> Lads Roofs<br>& Industries Ltd</div>
+      <p class="footer-tagline">Professional wooden roof framework and roofing sheet installation, serving clients nationwide across Nigeria. CAC Registered in Nigeria.</p>
+      <div class="footer-contact">
+        <a href="tel:+2349076522025">📞 09076522025</a>
+        <a href="tel:+2348132302906">📞 08132302906</a>
+        <a href="mailto:info@dadandladsroofs.com.ng">✉ info@dadandladsroofs.com.ng</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Wooden Roof Trusses</a></li>
+        <li><a href="#services">Roofing Sheet Installation</a></li>
+        <li><a href="#services">Full Roofing Contracts</a></li>
+        <li><a href="#services">Annual Roof Maintenance</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#why-us">Why Choose Us</a></li>
+        <li><a href="#coverage">Coverage Areas</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Dad & Lads Roofs & Industries Ltd. All rights reserved.</p>
+    <p class="footer-reg">RC Number: 8931054 · CAC Registered · Nigeria</p>
+  </div>
+</footer>
+
+</body>
+</html>
